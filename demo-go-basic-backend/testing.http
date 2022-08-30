@@ -1,0 +1,31 @@
+@host = http://localhost:8080
+
+GET {{host}} HTTP/1.1;
+
+###
+
+GET {{host}}/products HTTP/1.1;
+
+###
+
+GET {{host}}/products/3 HTTP/1.1;
+
+###
+
+//Address not found
+GET {{host}}/product/1 HTTP/1.1
+
+###
+
+//Method not allowed
+POST {{host}}/products/1 HTTP/1.1
+
+### add products
+POST {{host}}/products HTTP/1.1
+
+
+{
+    "name": "Hidden Scroll",
+    "description": "a scroll, which can summon gamabunta",
+    "quantity": 2
+}
